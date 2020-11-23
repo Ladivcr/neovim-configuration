@@ -19,10 +19,12 @@ set ruler " Para determinar la posición del cursor, fila-columna
 call plug#begin('~/.local/share/nvim/plugged')
 
 " Aquí irán los plugins a instalar
+
 Plug 'joshdick/onedark.vim' " Tema one dark inspirado en atom 
 " PARA MOSTRAR LOS DIRECTORIOS EN ARBOL
 Plug 'scrooloose/nerdtree' " Para poder ver la rama de archivos en el que estoy trabajando
-" AQUI TERMINA LO DE LOS DIRECTORIOS
+Plug 'xuyuanp/nerdtree-git-plugin'
+" AQUI TERMINA LO DE LOS DIRECTORIOS EN ARBOL
 Plug 'Yggdroot/indentLine' " Para tener una línea que me marque el indentado
 Plug 'iCyMind/NeoSolarized' " Tema neozolarized
 
@@ -30,6 +32,12 @@ Plug 'iCyMind/NeoSolarized' " Tema neozolarized
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'  " Temas para airline
 " Aquí termina la barra de estado
+
+
+" PLUG PARA LA BÚSQEDA INCREMENTAL
+Plug 'haya14busa/incsearch.vim'
+" Aquí termina plug para búsqueda incremental
+
 call plug#end()
 
 " Luego de esta línea puedes agregar tus configuraciones y mappings
@@ -52,6 +60,16 @@ map <F2> :NERDTreeToggle<CR> " Abrir/Cerrar NERDTree con F2
 let g:indentLine_fileTypeExclude = ['text', 'sh', 'help', 'terminal']
 let g:indentLine_bufNameExclude = ['NERD_tree.*', 'term:.*']
 " AQUÍ TERMINA NERDTREE
+
+
+" Maps requeridos PARA BÚSQUEDA INCREMENTAL
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+" Quitar resaltado luego de buscar
+let g:incsearch#auto_nohlsearch = 1
+" AQUÍ TERMINA MAPS PARA BÚSQUEDA INCREMENTAL
+
+
 
 " ESTO PERTENECE A LA BARRA DE ESTADO
 let g:airline#extensions#tabline#enabled = 1  " Mostrar buffers abiertos (como pestañas)
