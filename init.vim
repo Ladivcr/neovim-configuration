@@ -25,8 +25,8 @@ Plug 'joshdick/onedark.vim' " Tema one dark inspirado en atom
 Plug 'scrooloose/nerdtree' " Para poder ver la rama de archivos en el que estoy trabajando
 Plug 'xuyuanp/nerdtree-git-plugin'
 " AQUI TERMINA LO DE LOS DIRECTORIOS EN ARBOL
+
 Plug 'Yggdroot/indentLine' " Para tener una línea que me marque el indentado
-Plug 'iCyMind/NeoSolarized' " Tema neozolarized
 
 " El siguiente plug pertenece a la barra de estado.
 Plug 'vim-airline/vim-airline'
@@ -42,11 +42,10 @@ call plug#end()
 
 " Luego de esta línea puedes agregar tus configuraciones y mappings
 set termguicolors  " Activa true colors en la terminal
+
 set background=dark  " Fondo del tema: dark/light
-"colorscheme NeoSolarized  " Activa tema NeoSolarized
-"colorscheme onedark  " Activa tema onedark
-"colorscheme zellner " Nombre del tema 
-"set background="dark" " fondo del tema 
+colorscheme onedark  " Activa tema onedark
+
 
 nnoremap <C-s> :w<CR> " Atajo para guardar haciendo uso de Ctrl+s
 
